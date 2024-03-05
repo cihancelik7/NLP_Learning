@@ -1,0 +1,3 @@
+greetings   hello how are you good morning good afernoon hi
+price   cost how much ? price value
+bye     bye goodbye see you later to you

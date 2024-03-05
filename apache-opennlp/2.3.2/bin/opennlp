@@ -1,0 +1,2 @@
+#!/bin/bash
+JAVA_HOME="/usr/local/opt/openjdk" OPENNLP_HOME="/usr/local/Cellar/apache-opennlp/2.3.2/libexec" exec "/usr/local/Cellar/apache-opennlp/2.3.2/libexec/bin/opennlp"  "$@"
