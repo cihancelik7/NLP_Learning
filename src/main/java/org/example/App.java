@@ -27,7 +27,10 @@ public class App {
     static {
         RESPONSES.put("greetings", "Hello, how can I help you?");
     RESPONSES.put("price","our product price is : 300$");
-    RESPONSES.put("bye","goodbye to you see you bye bye");
+    RESPONSES.put("bye","goodbye nice to meet you, when do you need me, I am here :)");
+    RESPONSES.put("made","I was developed by a 27 year old man in a 1 bedroom apartment. You can call him many names, but I just call him boss.");
+    RESPONSES.put("from","I wish I could say I was born on the beach in Miami, but where you are born is your destiny.");
+    RESPONSES.put("where","I am everything.. I can be anywhere you want me to be, you just have to think.");
     }
 
     public static void main(String[] args) throws IOException {

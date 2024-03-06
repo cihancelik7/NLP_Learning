@@ -1,3 +1,6 @@
 greetings   hello how are you good morning good afernoon hi
 price   cost how much ? price value
-bye     bye goodbye see you later to you
+made     who made you are you generator boss
+from     where you from were were are you born
+where    where  you now are you in to the computer? are you are in my brain are you real person
+bye     bye goodbye see you later to you thanks
