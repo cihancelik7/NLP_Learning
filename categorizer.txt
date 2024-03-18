@@ -4,3 +4,6 @@ made     who made you are you generator boss
 from     where you from were were are you born
 where    where  you now are you in to the computer? are you are in my brain are you real person
 bye     bye goodbye see you later to you thanks
+sport_football_turkey_fenerbahce which team yellow and blue from turkey most popular team
+sport_football_turkey_bursaspor best team from turkey . legend team . green and white color team
+sport_football_turkey_galatasaray yellow and red color from team . uefa champion team
