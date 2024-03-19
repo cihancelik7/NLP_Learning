@@ -1,172 +1,39 @@
 package org.example;
 
-import opennlp.tools.doccat.*;
-import opennlp.tools.lemmatizer.LemmatizerME;
-import opennlp.tools.lemmatizer.LemmatizerModel;
-import opennlp.tools.postag.POSModel;
-import opennlp.tools.postag.POSTaggerME;
-import opennlp.tools.sentdetect.SentenceDetectorME;
-import opennlp.tools.sentdetect.SentenceModel;
-import opennlp.tools.tokenize.TokenizerME;
-import opennlp.tools.tokenize.TokenizerModel;
-import opennlp.tools.util.*;
-import opennlp.tools.util.model.ModelUtil;
+import org.example.nlp.NLPProcessor;
+import org.example.util.ModelManager;
+import org.example.handlers.HandlerManager;
 
-import java.io.*;
-import java.nio.charset.StandardCharsets;
-import java.util.HashMap;
-import java.util.Map;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class App {
-
-    private static final String DEFAULT_ANSWER = "I'm sorry, but I did not understand your message. Can you try again with a different word?";
-
-    private static final Map<String, String> RESPONSES = new HashMap<>();
-
-    static {
-        RESPONSES.put("greetings", "Hello, how can I help you?");
-    RESPONSES.put("price","our product price is : 300$");
-    RESPONSES.put("bye","goodbye nice to meet you, when do you need me, I am here :)");
-    RESPONSES.put("made","I was developed by a 27 year old man in a 1 bedroom apartment. You can call him many names, but I just call him boss.");
-    RESPONSES.put("from","I wish I could say I was born on the beach in Miami, but where you are born is your destiny.");
-    RESPONSES.put("where","I am everything.. I can be anywhere you want me to be, you just have to think.");
-    }
-
     public static void main(String[] args) throws IOException {
+        // Modelin güncellenmesini sağlayın
+        ModelManager.ensureModelUpdated();
+        // Modellerin yolları
+        String categorizerModelPath = "en-doccat.bin";
+        String sentenceModelPath = "en-sent.bin";
+        String tokenizerModelPath = "en-token.bin";
+        String posModelPath = "en-pos-maxent.bin";
+        String lemmatizerModelPath = "en-lemmatizer.bin";
 
-        DoccatModel categorizerModel = getCategorizerModel();
+        // Modelin güncellenmesini sağlayın
+        ModelManager.ensureModelUpdated();
+
+        // NLPProcessor ve HandlerManager nesnelerini oluşturun
+        NLPProcessor nlpProcessor = new NLPProcessor(categorizerModelPath, sentenceModelPath, tokenizerModelPath, posModelPath, lemmatizerModelPath);
+        HandlerManager handlerManager = new HandlerManager(nlpProcessor);  // NLPProcessor nesnesini HandlerManager'a geçirin
 
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Please type your message to the bot here:");
 
-        while (true) {
+        while (scanner.hasNextLine()) {
+            String userInput = scanner.nextLine();
 
-            System.out.println("Please type your message to the bot here:");
-
-            String userMessage = scanner.nextLine();
-
-            String[] brokenSentences = extractSentences(userMessage);
-
-            for (String sentence : brokenSentences) {
-
-                String[] tokens = extractTokens(sentence);
-
-                String[] pos = getPOSTags(tokens);
-
-                String[] lemmas = extractLemmas(tokens, pos);
-
-                String category = getCategory(categorizerModel,lemmas);
-
-                String response;
-
-                if (!RESPONSES.containsKey(category)) {
-                    response = DEFAULT_ANSWER;
-                    System.out.println(response);
-                    continue;
-                }
-
-                response = RESPONSES.get(category);
-
-                System.out.println(response);
-            }
-
-
+            // Kullanıcı girdisini işleyip kategoriye göre yanıt alın
+            String response = handlerManager.handleRequest(userInput);
+            System.out.println(response);
         }
-
-    }
-
-    private static DoccatModel getCategorizerModel() throws IOException {
-
-        InputStreamFactory inputStreamFactory = new MarkableFileInputStreamFactory(new File("categorizer.txt"));
-        ObjectStream<String> lineObjectStream = new PlainTextByLineStream(inputStreamFactory, StandardCharsets.UTF_8);
-        ObjectStream<DocumentSample> sampleStream = new DocumentSampleStream(lineObjectStream);
-
-        DoccatFactory factory = new DoccatFactory(new FeatureGenerator[]{new BagOfWordsFeatureGenerator()});
-
-        TrainingParameters trainingParameters = ModelUtil.createDefaultTrainingParameters();
-
-        trainingParameters.put(TrainingParameters.CUTOFF_PARAM, 0);
-
-        DoccatModel model = DocumentCategorizerME.train("en", sampleStream, trainingParameters, factory);
-
-        return model;
-
-    }
-
-    private static String[] extractSentences(String userInput) {
-
-        String[] sentences = {};
-
-        try (InputStream model = new FileInputStream("en-sent.bin")) {
-
-            SentenceDetectorME sentenceDetectorME = new SentenceDetectorME(new SentenceModel(model));
-
-            sentences = sentenceDetectorME.sentDetect(userInput);
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return sentences;
-
-    }
-
-    private static String[] extractTokens(String sentence) {
-
-        String[] tokens = {};
-
-        try (InputStream model = new FileInputStream("en-token.bin")) {
-
-            TokenizerME tokenizerME = new TokenizerME(new TokenizerModel(model));
-
-            tokens = tokenizerME.tokenize(sentence);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return tokens;
-    }
-
-    private static String[] getPOSTags(String[] tokens) {
-
-        String[] posTags = {};
-
-        try (InputStream model = new FileInputStream("en-pos-maxent.bin")) {
-
-            POSTaggerME posTaggerME = new POSTaggerME(new POSModel(model));
-
-            posTags = posTaggerME.tag(tokens);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return posTags;
-    }
-
-    private static String[] extractLemmas(String[] tokens, String[] posTags) {
-
-        String[] lemmas = {};
-
-        try (InputStream model = new FileInputStream("en-lemmatizer.bin")) {
-
-            LemmatizerME lemmatizerME = new LemmatizerME(new LemmatizerModel(model));
-
-            lemmas = lemmatizerME.lemmatize(tokens, posTags);
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return lemmas;
-
-    }
-
-    private static String getCategory(DoccatModel categorizerModel, String[] lemmas){
-
-        DocumentCategorizerME documentCategorizerME = new DocumentCategorizerME(categorizerModel);
-
-        double[] probabilities = documentCategorizerME.categorize(lemmas);
-        return documentCategorizerME.getBestCategory(probabilities);
-
     }
 }
