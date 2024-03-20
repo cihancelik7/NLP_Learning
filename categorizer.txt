@@ -1,9 +1,44 @@
-greetings   hello how are you good morning good afernoon hi
-price   cost how much ? price value
-made     who made you are you generator boss
-from     where you from were were are you born
-where    where  you now are you in to the computer? are you are in my brain are you real person
-bye     bye goodbye see you later to you thanks
-sport_football_turkey_fenerbahce which team yellow and blue from turkey most popular team
-sport_football_turkey_bursaspor best team from turkey . legend team . green and white color team
-sport_football_turkey_galatasaray yellow and red color from team . uefa champion team
+greetings                                           hello how are you good morning good afternoon hi hey what's up howdy
+prices                                              how much does it cost what's the price can you tell me the price of
+creation                                            who created you who made you tell me about your creator
+origin                                              where are you from where is your origin tell me about your background
+location                                            where are you now are you in a computer are you in my phone where do you exist
+fruits                                              apple banana avocado pineapple orange melon watermelon grapes cherry
+farewells                                           bye goodbye see you later take care farewell see you soon
+sports.football.results                             "Who won the last football match?", "Show me recent football scores", "Latest football match results"
+sports.football.teams                               "Tell me about the football team statistics", "Team standings in football", "Information on football teams"
+sports.football.players.ballondor                   "Who won the Ballon d'Or last year?"
+sports.football.players.messi                       "What team does Lionel Messi play for?"
+sports.football.players.ronaldo_goals               "How many goals has Cristiano Ronaldo scored in his career?"
+sports.football.players.england_captain             "Who is the captain of the England national team?"
+sports.football.players.neymar_style                "Can you tell me more about Neymar's playing style?"
+sports.football.players.worldcup_final_goal         "Who scored the winning goal in the last World Cup final?"
+sports.football.players.premierleague_record         "What's the record for the most goals scored in a single Premier League season?"
+sports.football.players.most_caps                   "Which footballer has the most caps for their national team?"
+sports.football.players.best_goalkeeper             "Who is considered the best goalkeeper in the world right now?"
+sports.football.players.pele_number                 "What was Pele's jersey number?"
+sports.football.players.zidane_retirement           "Which club did Zinedine Zidane retire from?"
+sports.football.players.defender_goals              "Who is the highest-scoring defender in football history?"
+sports.football.players.mbappe_awards               What awards has Kylian Mbappe won?
+sports.football.players.youngest_worldcup           "Who is the youngest player to ever play in the World Cup?"
+sports.football.players.championsleague_titles      "Which footballer has won the most Champions League titles?"
+sports.football.teams.fenerbahce                    What kind of team is Fenerbahce? Which football team in Turkey owns the colors yellow and dark blue?
+sports.basketball.results                           "Latest basketball scores", "Basketball match highlights", "Who won the basketball game last night?"
+sports.basketball.teams                             "Basketball team rankings", "Stats for basketball teams", "Basketball team news"
+sports.basketball.players                           "Top basketball players", "Basketball player career stats", "Player achievements in basketball"
+sports.tennis                                       "Recent tennis match results", "Tennis rankings", "Upcoming tennis tournaments"
+sports.swimming                                     "World swimming records", "Swimming championship results", "Top swimmers in the world"
+sports.running                                      "Marathon event dates", "Running training tips", "Best running trails"
+sports.cycling                                      "Cycling races information", "Best bicycles for racing", "Cycling training programs"
+sports.soccer.results                               "Soccer match scores", "Soccer game summaries", "Recent soccer game winners"
+sports.soccer.teams                                 "Soccer team overviews", "Soccer league standings", "Team formations in soccer"
+sports.soccer.players                               "Famous soccer players", "Soccer player transfer news", "Injured players in soccer"
+technology.ai                                       "Latest advancements in AI", "AI impact on society", "AI startups to watch"
+technology.virtualreality                           "VR headset reviews", "Upcoming VR games", "Virtual reality in education"
+technology.software                                 "Software development trends", "Best programming languages", "Top software tools for productivity"
+music.rock                                          "Top rock albums this year", "Rock concerts near me", "Rock music history"
+music.pop                                           "Popular pop songs", "Pop music awards", "Pop artist interviews"
+music.jazz                                          "Jazz music festivals", "Famous jazz musicians", "Introduction to jazz music"
+technology                                          smartphone laptop computer AI virtual reality software programming
+music                                               rock pop jazz classical hip-hop electronic dance reggae
+weather                                             what's the weather like how's the weather in [city] is it going to rain tomorrow
