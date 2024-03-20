@@ -1,4 +1,4 @@
-package org.example;
+package org.example.data;
 
 import netscape.javascript.JSObject;
 import org.json.JSONObject;

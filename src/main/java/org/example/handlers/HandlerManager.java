@@ -1,7 +1,6 @@
 package org.example.handlers;
 
 import org.example.nlp.NLPProcessor;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,6 +16,8 @@ public class HandlerManager {
         handlers.put("creation", new CreationHandler());
         handlers.put("origin", new OriginHandler());
         handlers.put("location", new LocationHandler());
+        handlers.put("farewells",new FarewellsHandler());
+        handlers.put("weather", new WeatherHandler(nlpProcessor));
         // Daha fazla handler ekleyin
     }
 
