@@ -4,6 +4,7 @@ import opennlp.tools.doccat.DoccatModel;
 import opennlp.tools.doccat.DocumentCategorizerME;
 import opennlp.tools.lemmatizer.LemmatizerME;
 import opennlp.tools.lemmatizer.LemmatizerModel;
+import opennlp.tools.namefind.TokenNameFinderModel;
 import opennlp.tools.postag.POSModel;
 import opennlp.tools.postag.POSTaggerME;
 import opennlp.tools.sentdetect.SentenceDetectorME;
@@ -21,8 +22,9 @@ public class NLPProcessor {
     private TokenizerModel tokenizerModel;
     private POSModel posModel;
     private LemmatizerModel lemmatizerModel;
+    private TokenNameFinderModel nameFinderModel;
 
-    public NLPProcessor(String categorizerPath, String sentenceModelPath, String tokenizerModelPath, String posModelPath, String lemmatizerModelPath) {
+    public NLPProcessor(String categorizerPath, String sentenceModelPath,String nameFinderModelPath, String tokenizerModelPath, String posModelPath, String lemmatizerModelPath) {
         this.categorizerModel = loadModel(categorizerPath, DoccatModel.class);
         this.sentenceModel = loadModel(sentenceModelPath, SentenceModel.class);
         this.tokenizerModel = loadModel(tokenizerModelPath, TokenizerModel.class);

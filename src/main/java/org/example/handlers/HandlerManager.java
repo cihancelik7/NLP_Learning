@@ -18,6 +18,7 @@ public class HandlerManager {
         handlers.put("location", new LocationHandler());
         handlers.put("farewells",new FarewellsHandler());
         handlers.put("weather", new WeatherHandler(nlpProcessor));
+        handlers.put("sports", new SportsHandler(nlpProcessor));
         // Daha fazla handler ekleyin
     }
 
