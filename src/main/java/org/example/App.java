@@ -17,14 +17,12 @@ public class App {
         String tokenizerModelPath = "en-token.bin";
         String posModelPath = "en-pos-maxent.bin";
         String lemmatizerModelPath = "en-lemmatizer.bin";
-        String nameFinderModelPath = "";
-
 
         // Modelin güncellenmesini sağlayın
         ModelManager.ensureModelUpdated();
 
         // NLPProcessor ve HandlerManager nesnelerini oluşturun
-        NLPProcessor nlpProcessor = new NLPProcessor(categorizerModelPath, sentenceModelPath,nameFinderModelPath, tokenizerModelPath, posModelPath, lemmatizerModelPath);
+        NLPProcessor nlpProcessor = new NLPProcessor(categorizerModelPath, sentenceModelPath, tokenizerModelPath, posModelPath, lemmatizerModelPath);
         HandlerManager handlerManager = new HandlerManager(nlpProcessor);  // NLPProcessor nesnesini HandlerManager'a geçirin
 
         Scanner scanner = new Scanner(System.in);

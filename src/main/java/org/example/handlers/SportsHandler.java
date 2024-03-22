@@ -13,14 +13,14 @@ public class SportsHandler implements ResponseHandler{
         @Override
         public String handleResponse(String input) {
             if (input.toLowerCase().contains("messi")) {
-                if (input.toLowerCase().contains("yaş")) {
+                if (input.toLowerCase().contains("age")) {
                     // Messi'nin yaşı için hesaplama yapın veya sabit bir değer döndürün
-                    return "Lionel Messi'nin yaşı...";
-                } else if (input.toLowerCase().contains("takım")) {
-                    return "Lionel Messi şu anda Paris Saint-Germain takımında oynuyor.";
-                } else if (input.toLowerCase().contains("gol sayısı")) {
+                    return "Lionel Messi is 36 years old";
+                } else if (input.toLowerCase().contains("team")) {
+                    return "lionel messi currently plays football at inter miami.";
+                } else if (input.toLowerCase().contains("number of goals")||input.toLowerCase().contains("scores of goal")|| input.toLowerCase().contains("How many goals")|| input.toLowerCase().contains("goals")) {
                     // Gol sayısı için harici bir kaynaktan bilgi çekin veya sabit bir değer döndürün
-                    return "Lionel Messi'nin kariyeri boyunca attığı gol sayısı...";
+                    return "Messi scored more than 800 goals, becoming the player who scored the most goals (672) in a club.";
                 }
                 // Diğer Messi ile ilgili spesifik sorular
             }
