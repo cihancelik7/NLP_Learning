@@ -21,6 +21,7 @@ public class HandlerManager {
         handlers.put("sports", new SportsHandler(nlpProcessor));
         handlers.put("date",new DateHandler());
         handlers.put("time",new TimeHandler());
+        handlers.put("twitter", new TwitterHandler());
         // Daha fazla handler ekleyin
     }
 

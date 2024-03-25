@@ -81,8 +81,8 @@ public class NLPProcessor {
             return "date";
         } else if (userInput.toLowerCase().contains("sports")){
             return "sports";
-
-        }
+        } else if (userInput.toLowerCase().contains("tweet")|| userInput.toLowerCase().contains("twitter"))
+            return "twitter";
 
         String[] tokens = tokenize(userInput);
         String category = categorize(tokens);

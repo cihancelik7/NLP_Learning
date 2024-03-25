@@ -3,12 +3,13 @@ package org.example;
 import org.example.nlp.NLPProcessor;
 import org.example.util.ModelManager;
 import org.example.handlers.HandlerManager;
+import twitter4j.TwitterException;
 
 import java.io.IOException;
 import java.util.Scanner;
 
 public class App {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException , TwitterException {
         // Modelin güncellenmesini sağlayın
         ModelManager.ensureModelUpdated();
         // Modellerin yolları

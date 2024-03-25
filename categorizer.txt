@@ -6,6 +6,8 @@ creation: "Who created you?", "Who made you?", "Tell me about your creator", "In
 
 date: "What's today's date?", "Can you tell me the date today?", "I need to know the current date.", "Show me today's date.", "What day is it today?"
 
+email: "Send an email.", "I want to write an email.", "Email service."
+
 origin: "Where are you from?", "Where is your origin?", "Tell me about your background", "Your development history", "Origin of your technology"
 
 location: "Where are you now?", "Are you in a computer?", "Are you in my phone?", "Where do you exist?", "Your current location"
@@ -77,6 +79,8 @@ technology.virtualreality: "VR headset reviews", "Upcoming VR games", "Virtual r
 technology.software: "Software development trends", "Best programming languages", "Top software tools for productivity"
 
 time: "What time is it?", "Can you tell me the current time?", "I need to know the time now.", "Show me the time."
+
+twitter: i want to send tweet . i need write some tweet . i want to use twitter . post a tweet for me . send out a tweet . make a tweet with the following text .
 
 music.rock: "Top rock albums this year", "Rock concerts near me", "Rock music history"
 
