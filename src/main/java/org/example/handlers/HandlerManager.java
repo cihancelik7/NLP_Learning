@@ -22,6 +22,7 @@ public class HandlerManager {
         handlers.put("date",new DateHandler());
         handlers.put("time",new TimeHandler());
         handlers.put("twitter", new TwitterHandler());
+        handlers.put("email",new EmailsHandler());
         // Daha fazla handler ekleyin
     }
 
