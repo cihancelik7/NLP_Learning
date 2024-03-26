@@ -1,18 +1,21 @@
 package org.example.handlers;
 
+import org.example.email.EmailReader;
 import org.example.email.EmailService;
 
 import java.util.Scanner;
 
 public class EmailsHandler implements ResponseHandler{
     private enum State{
+        INITIAL,
         AWAITING_RECIPIENT,
         AWAITING_SUBJECT,
         AWAITING_CONTENT,
         CONFIRMATION,
+        READ_EMAILS,
         COMPLETED
     }
-    private State currentState = State.AWAITING_RECIPIENT;
+    private State currentState = State.INITIAL;
     private String recipient = "";
     private String subject = "";
     private String content = "";
@@ -22,6 +25,20 @@ public class EmailsHandler implements ResponseHandler{
 
         while (currentState != State.COMPLETED){
             switch (currentState){
+                case INITIAL:
+                    System.out.println("Do you want to send an email or read your emails? (send,read): ");
+                    String action = scanner.nextLine();
+                    if("send".equalsIgnoreCase(action)){
+                        currentState = State.AWAITING_RECIPIENT;
+                    }else if ("read".equalsIgnoreCase(action)){
+                        currentState = State.READ_EMAILS;
+                    }
+
+                    break;
+                case READ_EMAILS:
+                    EmailReader.readEmails();
+                    currentState = State.COMPLETED;
+                    break;
                 case AWAITING_RECIPIENT:
                     System.out.println("please enter the recipient's email address: ");
                     recipient = scanner.nextLine();
@@ -57,7 +74,7 @@ public class EmailsHandler implements ResponseHandler{
             }
         }
         if (currentState == State.COMPLETED){
-            currentState = State.AWAITING_RECIPIENT;
+            currentState = State.INITIAL;
             recipient = "";
             subject = "";
             content = "";

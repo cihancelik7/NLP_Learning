@@ -6,7 +6,9 @@ creation: "Who created you?", "Who made you?", "Tell me about your creator", "In
 
 date: "What's today's date?", "Can you tell me the date today?", "I need to know the current date.", "Show me today's date.", "What day is it today?"
 
-email: "Send an email.", "I want to write an email.", "Email service."
+email.read: "Read my emails.", "Show me my inbox.", "Check emails.", "Can you open my emails?", "I need to see my emails."
+
+email.send: "Send an email.", "I want to write an email.", "Compose an email.", "Start an email draft.", "How can I send an email?"
 
 origin: "Where are you from?", "Where is your origin?", "Tell me about your background", "Your development history", "Origin of your technology"
 
