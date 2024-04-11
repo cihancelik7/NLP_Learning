@@ -18,6 +18,8 @@ fruits: "Apple", "Banana", "Avocado", "Pineapple", "Orange", "Melon", "Watermelo
 
 farewells: "Bye", "Goodbye", "See you later", "Take care", "Farewell", "See you soon", "Until next time"
 
+recipes: "How to make lasagna?", "Ingredients for chocolate cake", "Recipe for homemade pizza", "Steps to cook a steak", "Making pancakes recipe"
+
 sports.football.results: "Who won the last football match?", "Show me recent football scores", "Latest football match results"
 
 sports.football.teams: "Tell me about the football team statistics", "Team standings in football", "Information on football teams"

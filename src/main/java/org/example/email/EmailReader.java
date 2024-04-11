@@ -23,7 +23,7 @@ public class EmailReader {
             Message[] messages = emailFolder.getMessages();
             int numberOfMessagesToRead = Math.min(messages.length, 10); // To prevent IndexOutOfBoundsException
 
-            for (int i = 0; i < numberOfMessagesToRead; i++) {
+            for (int i = messages.length - 1; i >= messages.length - numberOfMessagesToRead; i--) {
                 Message message = messages[i];
                 System.out.println("-------------------------");
                 System.out.println("Email Number: " + (i + 1));
