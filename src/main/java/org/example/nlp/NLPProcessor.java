@@ -95,16 +95,30 @@ public class NLPProcessor {
             return "date";
         } else if (userInput.toLowerCase().contains("sports")) {
             return "sports";
-        } else if (userInput.toLowerCase().contains("tweet") || userInput.toLowerCase().contains("twitter"))
+        } else if (userInput.toLowerCase().contains("tweet") || userInput.toLowerCase().contains("twitter")){
             return "twitter";
-        else if (userInput.toLowerCase().contains("email"))
+        } else if (userInput.toLowerCase().contains("email")) {
             return "email";
+        } else if (userInput.toLowerCase().contains("recipe") || userInput.toLowerCase().contains("cook") || userInput.toLowerCase().contains("ingredients")) {
+            return "recipe";
+        }
 
         // Anahtar kelime eşleşmesi olmadığında, metni tokenize edip kategori tahmini yapar
         String[] tokens = tokenize(userInput);
         String category = categorize(tokens);
         logger.info("Determined category: {}", category); // Tahmin edilen kategoriyi loglar
         return category;
+    }
+    public String extractQuery(String userInput){
+        String[] tokens = tokenize(userInput);
+        String[] tags = posTag(tokens);
+        StringBuilder query = new StringBuilder();
+        for (int i = 0; i< tokens.length; i ++){
+            if (tags[i].startsWith("NN")){
+                query.append(tokens[i]).append(" ");
+            }
+        }
+        return query.toString().trim();
     }
 
 }

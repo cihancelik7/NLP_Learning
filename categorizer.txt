@@ -18,7 +18,7 @@ fruits: "Apple", "Banana", "Avocado", "Pineapple", "Orange", "Melon", "Watermelo
 
 farewells: "Bye", "Goodbye", "See you later", "Take care", "Farewell", "See you soon", "Until next time"
 
-recipes: "How to make lasagna?", "Ingredients for chocolate cake", "Recipe for homemade pizza", "Steps to cook a steak", "Making pancakes recipe"
+recipe: How can I make a classic Italian lasagna?, What ingredients do I need for a vegan chocolate cake ?, Can you show me how to prepare sushi at home?, I need a recipe for a gluten-free apple pie, Guide me through making a spicy Thai curry . , What's the best way to cook a steak on a grill? , How do I make pancakes using almond milk ? , Tell me how to bake a chicken with Mediterranean herbs . , Steps to make homemade pasta with a pasta machine . , Recipe for a low-carb cauliflower pizza .
 
 sports.football.results: "Who won the last football match?", "Show me recent football scores", "Latest football match results"
 

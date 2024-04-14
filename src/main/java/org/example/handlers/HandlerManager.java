@@ -33,7 +33,7 @@ public class HandlerManager {
         handlers.put("time", new TimeHandler()); // Zaman ile ilgili sorular için handler
         handlers.put("twitter", new TwitterHandler()); // Twitter ile ilgili sorular için handler
         handlers.put("email", new EmailsHandler()); // Email ile ilgili sorular için handler
-        handlers.put("recipe",new RecipeHandler(nlpProcessor));
+        handlers.put("recipe",new RecipeHandler());
         // Daha fazla handler ekleyin
     }
     // Kullanıcı girişine yanıt veren metod.
