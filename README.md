@@ -1,5 +1,4 @@
 
-Sure, here's a conversational and engaging translation of your message into English:
 
 ---
 
